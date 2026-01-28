@@ -1,0 +1,2 @@
+# ESP32 RS485 Half Duplex mode
+CONFIG_UART_ISR_IN_IRAM=y
