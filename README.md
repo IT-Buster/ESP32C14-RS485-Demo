@@ -1,4 +1,4 @@
-# ESP32C14 RS485/Modbus RTU Demo Project
+# ES32C14 RS485/Modbus RTU Demo Project
 
 **Complete demo project for ES32C14 board with RS485/Modbus RTU communication examples and comprehensive documentation.**
 

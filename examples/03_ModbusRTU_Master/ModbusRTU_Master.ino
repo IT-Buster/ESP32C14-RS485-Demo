@@ -98,7 +98,9 @@ void loop() {
     // Option 1: Use WiFi to send data to server/UDP
     // Option 2: Use Serial2 for debug output (uncomment below)
     
-    // Serial2.begin(115200, SERIAL_8N1, 16, 17);  // RX=16, TX=17
+    // To enable Serial2 debugging, add to setup():
+    // Serial2.begin(115200, SERIAL_8N1, 16, 17);  // RX=GPIO16, TX=GPIO17
+    // Then uncomment these lines:
     // Serial2.print("Humidity: ");
     // Serial2.print(humidityReal);
     // Serial2.print("% RH, Temperature: ");
@@ -109,12 +111,12 @@ void loop() {
     blinkLED(2, 100);
   } else {
     // Communication error
-    // Possible error codes:
-    // 0xE0 - Invalid response
-    // 0xE1 - Invalid CRC
-    // 0xE2 - Invalid exception code
-    // 0xE3 - Invalid function code
-    // 0xE4 - Response timeout
+    // Possible ModbusMaster error codes:
+    // 0xE0 (ku8MBInvalidSlaveID) - Wrong slave address responded
+    // 0xE1 (ku8MBInvalidFunction) - Invalid function code in response
+    // 0xE2 (ku8MBResponseTimedOut) - No response from slave (most common)
+    // 0xE3 (ku8MBInvalidCRC) - CRC check failed (communication error)
+    // Check ModbusMaster library documentation for more details
     
     // LED blink pattern: error (5 fast blinks)
     blinkLED(5, 50);

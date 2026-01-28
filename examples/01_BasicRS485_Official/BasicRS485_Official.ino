@@ -32,7 +32,7 @@ const int RS485RD = 22;  // DE/RE control pin (Direction Enable/Receive Enable)
 
 void setup() {                
   Serial.begin(115200);      // UART0 at 115200 baud for RS485 communication
-  Serial.setTimeout(5);      // 5ms timeout for readString()
+  Serial.setTimeout(5);      // 5ms timeout for readString() - original eletechsup value
   pinMode(RS485RD, OUTPUT);
   digitalWrite(RS485RD, LOW); // Start in receive mode
 }

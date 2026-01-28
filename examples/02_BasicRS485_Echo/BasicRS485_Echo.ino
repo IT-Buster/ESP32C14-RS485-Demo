@@ -52,7 +52,7 @@ void loop() {
     while (Serial.available()) {
       char c = Serial.read();
       received += c;
-      delay(10);  // Small delay to allow buffer to fill
+      delay(10);  // Small delay to allow buffer to fill (RS485 timing)
     }
     
     // Echo back
@@ -70,12 +70,12 @@ void loop() {
 void sendMessage(String msg) {
   digitalWrite(LED_PIN, HIGH);        // Turn on LED
   digitalWrite(RS485_DE_RE, HIGH);    // Transmit mode
-  delay(10);                          // Wait for mode switch
+  delay(10);                          // Wait for mode switch (RS485 transceiver settling time)
   
   Serial.print(msg);
   Serial.flush();                     // Wait for transmission to complete
   
-  delay(10);                          // Wait before switching back
+  delay(10);                          // Wait before switching back (ensure transmission complete)
   digitalWrite(RS485_DE_RE, LOW);     // Receive mode
   digitalWrite(LED_PIN, LOW);         // Turn off LED
 }

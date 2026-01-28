@@ -49,7 +49,7 @@
 
 const int RS485_DE_RE = 22;
 const char* AP_SSID = "ES32C14-Scanner";
-const char* AP_PASS = "12345678";
+const char* AP_PASS = "12345678";  // WARNING: Change before production use!
 
 ModbusMaster node;
 WebServer server(80);
@@ -131,7 +131,9 @@ void handleScan() {
   
   int devicesFound = 0;
   
+  // Scan range: 1-10 for quick testing (extend to 247 for full scan)
   for (uint8_t id = 1; id <= 10; id++) {
+    yield();  // Allow WiFi and other tasks to run
     scanResults += "Slave " + String(id) + ": ";
     node.begin(id, Serial);
     
@@ -145,7 +147,7 @@ void handleScan() {
       foundFC03 = true;
     }
     
-    delay(100);  // Small delay between tests
+    delay(100);  // Small delay between tests (Modbus response time)
     
     // Test FC04 (Read Input Registers)
     result = node.readInputRegisters(0, 2);
@@ -161,7 +163,7 @@ void handleScan() {
     }
     
     scanResults += "\n";
-    delay(200);  // Delay between devices
+    delay(200);  // Delay between devices (allow bus to settle)
   }
   
   scanResults += "\n================================================================================\n";
