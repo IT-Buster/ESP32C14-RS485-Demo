@@ -120,6 +120,7 @@ Scan for Modbus devices with WiFi web interface
 
 ### Documentation
 
+📘 **[TESTING.md](docs/TESTING.md)** - How to test MODBUS and manufacturer code  
 📘 **[PINOUT.md](docs/PINOUT.md)** - ES32C14 pin reference and connections  
 📘 **[WIRING.md](docs/WIRING.md)** - Complete RS485 wiring guide  
 📘 **[TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)** - Common issues and solutions  
@@ -292,6 +293,7 @@ Skanowanie urządzeń Modbus z interfejsem WiFi
 
 ### Dokumentacja
 
+📘 **[TESTING.md](docs/TESTING.md)** - Jak testować MODBUS i kod producenta  
 📘 **[PINOUT.md](docs/PINOUT.md)** - Opis wyprowadzeń i połączeń ES32C14  
 📘 **[WIRING.md](docs/WIRING.md)** - Kompletny przewodnik okablowania RS485  
 📘 **[TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)** - Typowe problemy i rozwiązania  
