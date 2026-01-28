@@ -736,7 +736,7 @@ void setup() {
 void loop() {
   digitalWrite(RS485RD, HIGH);  // Tryb transmisji
   digitalWrite(2, HIGH);        // LED włączona
-  Serial.println("Wiadomosc testowa z Plytki 1");
+  Serial.println("Wiadomość testowa z Płytki 1");
   delay(100);
   digitalWrite(RS485RD, LOW);   // Tryb odbioru
   digitalWrite(2, LOW);         // LED wyłączona
@@ -766,7 +766,7 @@ GND                  →    GND
 
 **Oczekiwane rezultaty:**
 - LED na Płytce 1 miga co 2 sekundy
-- Płytka 2 odbiera: "receivedData: Wiadomosc testowa z Plytki 1" co 2 sekundy
+- Płytka 2 odbiera: "receivedData: Wiadomość testowa z Płytki 1" co 2 sekundy
 
 **Jak zweryfikować:**
 Ponieważ nie możesz użyć Monitora Szeregowego, użyj jednej z tych metod:
@@ -796,7 +796,7 @@ void setup() {
   
   // Wyjście debug na Serial2 (UART2)
   Serial2.begin(115200, SERIAL_8N1, 16, 17);  // RX=GPIO16, TX=GPIO17
-  Serial2.println("Test RS485 rozpoczety - Wyjscie Debug");
+  Serial2.println("Test RS485 rozpoczęty - Wyjście Debug");
   
   pinMode(RS485RD, OUTPUT);
   digitalWrite(RS485RD, LOW);
